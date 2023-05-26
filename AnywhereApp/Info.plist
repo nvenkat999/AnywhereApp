@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BUNDLE_DISPLAY_NAME</key>
+	<string>$(BUNDLE_DISPLAY_NAME)</string>
+	<key>BASE_URL</key>
+	<string>$(BASE_URL)</string>
+	<key>CHARACTER_API_PATH</key>
+	<string>$(CHARACTER_API_PATH)</string>
+	<key>UIApplicationSceneManifest</key>
+	<dict>
+		<key>UIApplicationSupportsMultipleScenes</key>
+		<false/>
+		<key>UISceneConfigurations</key>
+		<dict>
+			<key>UIWindowSceneSessionRoleApplication</key>
+			<array>
+				<dict>
+					<key>UISceneConfigurationName</key>
+					<string>Default Configuration</string>
+					<key>UISceneDelegateClassName</key>
+					<string>$(PRODUCT_MODULE_NAME).SceneDelegate</string>
+					<key>UISceneStoryboardFile</key>
+					<string>LoginScreen</string>
+				</dict>
+			</array>
+		</dict>
+	</dict>
+</dict>
+</plist>

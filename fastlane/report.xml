@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="fastlane.lanes">
+    
+    
+    
+      
+      <testcase classname="fastlane.lanes" name="0: default_platform" time="0.000292">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="1: Switch to ios apply_branding lane" time="0.000197">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="2: update_xcconfig_value" time="0.002062">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="3: update_xcconfig_value" time="0.001782">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="4: update_xcconfig_value" time="0.001064">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="5: update_xcconfig_value" time="0.001084">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="6: Switch to ios createIPA lane" time="0.000181">
+        
+      </testcase>
+    
+  </testsuite>
+</testsuites>

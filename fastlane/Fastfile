@@ -1,0 +1,72 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+require 'FileUtils'
+require 'rubygems'
+default_platform(:ios)
+
+platform :ios do
+
+  desc "This will be the main lane where users or CICD will interact"
+  lane :createAPP do |options|
+    @series ||= options[:series] || "SIMPSONS"
+    apply_branding(appSeriesType: @series)
+    createIPA
+  end
+
+  desc "This will be for creating IPA using fastlany GYM. "
+  private_lane :createIPA do 
+    #gym(
+     # scheme: "AnywhereApp",
+      #clean: true,
+      #export_method: "app-store",
+      #output_name: "anywhere.ipa",
+    #)
+    puts "Fastlane build successful"
+  end
+
+
+  desc "This will apply branding before we create ipa"
+  private_lane :apply_branding do |options|
+
+    @series ||= options[:appSeriesType] || "SIMPSONS"
+    puts "App series is #{@series}"
+    CURRENT_DIRECTORY = File.expand_path("..", Dir.pwd)
+    CONFIG_DIRECTORY = "#{CURRENT_DIRECTORY}/AnywhereApp/Resources/Configs"
+    GLOBAL_CONFIG_FILE = "#{CONFIG_DIRECTORY}/GlobalConfig.xcconfig"
+    puts "#{GLOBAL_CONFIG_FILE}"
+
+    update_xcconfig_value(
+    path: "#{GLOBAL_CONFIG_FILE}",
+    name: 'PRODUCT_BUNDLE_IDENTIFIER',
+    value: 'com.venkat.updatedIdentifier'
+  )
+  update_xcconfig_value(
+    path:  "#{GLOBAL_CONFIG_FILE}",
+    name: 'BUNDLE_DISPLAY_NAME',
+    value: 'newApp'
+  )
+  update_xcconfig_value(
+    path: "#{GLOBAL_CONFIG_FILE}",
+    name: 'BASE_URL',
+    value: 'api.duckduckgo.com'
+  )
+  update_xcconfig_value(
+    path:  "#{GLOBAL_CONFIG_FILE}",
+    name: 'CHARACTER_API_PATH',
+    value: '/?q=simpsons+characters&format=json'
+  )
+  end
+end

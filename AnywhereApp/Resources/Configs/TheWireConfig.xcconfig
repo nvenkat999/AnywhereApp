@@ -1,0 +1,14 @@
+//
+//  TheWire.xcconfig
+//  AnywhereApp
+//
+//  Created by Venkata N Naraharisetty on 5/24/23.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+PRODUCT_BUNDLE_IDENTIFIER = com.venkat.wireviewer
+BUNDLE_DISPLAY_NAME = wireviewer
+BASE_URL = api.duckduckgo.com
+CHARACTER_API_PATH = ?q=the+wire+characters&format=json
